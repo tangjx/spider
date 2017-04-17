@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test login hex_md5</title>
+	<script type="text/javascript" src="http://s1.jsyxw.cn/res/web/3.0/js/public/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://s1.jsyxw.cn/res/web/passport/passport.js"></script>
+	<script type="text/javascript" src="http://s1.jsyxw.cn/res/web/3.0/js/public/dev/common1.1.js"></script>
+	<script charset="utf-8" src="http://s6.jsyxw.cn/res/web/3.0/js/public/header_fn_20131108_1_passport_20130314_1.js"></script>
+	<script type="text/javascript">
+			function generateData() {
+				var password = $("#password").val();
+				console.log("password:" + password);
+				console.log(hex_md5($("#password").val()));
+			}
+		</script>
+</head>
+
+<body>
+		<input type="text" name="password" id="password" />
+		<input type="button" id="generate" value="generate" ="generate" onclick="generateData()"/>
+		
+</body>
+</html>
