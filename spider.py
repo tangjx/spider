@@ -1,6 +1,7 @@
 #from urllib import request
 import urllib.request  
 import http.cookiejar  
+import requests
 url="http://news.qq.com" 
 #req=request.Request("http://news.qq.com")
 #req.add_header("user-agent","Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36")
