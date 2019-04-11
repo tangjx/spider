@@ -28,7 +28,7 @@ def parse_xiaoqu(url,pa):
         info = html1.xpath('div[@class="address"]/div[@class="houseInfo"]/text()')
         floor = html1.xpath('div[@class="flood"]/div[@class="positionInfo"]/text()')
         info[0] = info[0].replace('\xa0','')  #该条信息中有个html语言的空格符号&nbsp；需要去掉，不然gbk编码会报错，gb18030显示问号
-        #date = html1.xpath('div[@class="address"]/div[@class="dealDate"]/text()')
+        date = html1.xpath('div[@class="address"]/div[@class="dealDate"]/text()')
         #30天内成交的进入详情页面抓取
         #if date[0] == '近30天内成交':
         p_url = html1.xpath('div[@class="title"]/a/@href')
@@ -75,7 +75,7 @@ def parse_xiaoqu(url,pa):
             price.append('暂无价格')
         if len(unitprice)==0:
             unitprice.append('暂无单价')
-        #date[0] = date[0].replace('链家成交', '')
+        date[0] = date[0].replace('链家成交', '')
         print("----------------", len(originalPrice))
         if len(originalPrice)==0:
         	originalPrice = [' ']
@@ -107,9 +107,9 @@ def parse_xiaoqu(url,pa):
         	houseLife = [' ']
         	houseOwnership = [' ']
 
-        print(title[0], info[0], floor[0], price[0], unitprice[0], originalPrice[0], tradeCycle[0], modifyPrice[0],takeLook[0],follow[0],view[0], houseUnitMap[0],houseFloor[0], totalArea[0], houseStructure[0], usedArea[0], buildType[0], orientation[0], finishYears[0], decoration[0],         buildStructure[0], heatingMode[0], ladderHouseRatio[0], propertyRightYears[0], hasElevator[0], lianjiaNumber[0], tradeRight[0],         listingDate[0], houseUse[0], houseLife[0], houseOwnership[0])
+        print(title[0], info[0], floor[0], date[0], price[0], unitprice[0], originalPrice[0], tradeCycle[0], modifyPrice[0],takeLook[0],follow[0],view[0], houseUnitMap[0],houseFloor[0], totalArea[0], houseStructure[0], usedArea[0], buildType[0], orientation[0], finishYears[0], decoration[0],         buildStructure[0], heatingMode[0], ladderHouseRatio[0], propertyRightYears[0], hasElevator[0], lianjiaNumber[0], tradeRight[0],         listingDate[0], houseUse[0], houseLife[0], houseOwnership[0])
         print(p_url[0])
-        a = [title[0], info[0], floor[0], price[0], unitprice[0], originalPrice[0], tradeCycle[0], modifyPrice[0],takeLook[0],follow[0],view[0], houseUnitMap[0],houseFloor[0], totalArea[0], houseStructure[0], usedArea[0], buildType[0], orientation[0], finishYears[0], decoration[0],         buildStructure[0], heatingMode[0], ladderHouseRatio[0], propertyRightYears[0], hasElevator[0], lianjiaNumber[0], tradeRight[0],         listingDate[0], houseUse[0], houseLife[0], houseOwnership[0],p_url[0]]
+        a = [title[0], info[0], floor[0], date[0], price[0], unitprice[0], originalPrice[0], tradeCycle[0], modifyPrice[0],takeLook[0],follow[0],view[0], houseUnitMap[0],houseFloor[0], totalArea[0], houseStructure[0], usedArea[0], buildType[0], orientation[0], finishYears[0], decoration[0],         buildStructure[0], heatingMode[0], ladderHouseRatio[0], propertyRightYears[0], hasElevator[0], lianjiaNumber[0], tradeRight[0],         listingDate[0], houseUse[0], houseLife[0], houseOwnership[0],p_url[0]]
         house_list.append(a)
         
         #print(p_url[0],title[0], info[0], floor[0], date[0], price[0], unitprice[0])
