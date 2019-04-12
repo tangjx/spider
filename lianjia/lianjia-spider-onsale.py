@@ -38,37 +38,38 @@ def parse_xiaoqu(url,pa):
         unitprice = html.xpath('//div[@class="overview"]/div[@class="info fr"]/div[@class="price"]/b/text()')
         date = html.xpath('//div[@class="house-title LOGVIEWDATA LOGVIEW"]/div[@class="wrapper"]/span/text()')
         
-        originalPrice = html.xpath('//div[@class="overview"]/div[@class="info fr"]/div[@class="msg"]/span[1]/label/text()')
-        tradeCycle = html.xpath('//div[@class="overview"]/div[@class="info fr"]/div[@class="msg"]/span[2]/label/text()')
-        modifyPrice = html.xpath('//div[@class="overview"]/div[@class="info fr"]/div[@class="msg"]/span[3]/label/text()')
-       	takeLook = html.xpath('//div[@class="overview"]/div[@class="info fr"]/div[@class="msg"]/span[4]/label/text()')
-        follow = html.xpath('//div[@class="overview"]/div[@class="info fr"]/div[@class="msg"]/span[5]/label/text()')
-        view = html.xpath('//div[@class="overview"]/div[@class="info fr"]/div[@class="msg"]/span[6]/label/text()')
+        totalPrice = html.xpath('//div[@class="content"]/div[@class="price "]/span[@class="total"]/text()')
+        unitPrice = html.xpath('//div[@class="content"]/div[@class="price "]/div[@class="text"]/div[@class="unitPrice"]/span/text()')
+        follow = html.xpath('//span[@id="favCount"]/text()')
+        view = html.xpath('//span[@id="cartCount"]/text()')
         
         
         
         
-        houseUnitMap = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[1]/text()')
-        houseFloor = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[2]/text()')
-        totalArea = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[3]/text()')
-        houseStructure = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[4]/text()')
-        usedArea = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[5]/text()')
-        buildType = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[6]/text()')
-        orientation = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[7]/text()')
-        finishYears = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[8]/text()')
-        decoration = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[9]/text()')
-        buildStructure = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[10]/text()')
-        heatingMode = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[11]/text()')
-        ladderHouseRatio = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[12]/text()')
-        propertyRightYears = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[13]/text()')
-        hasElevator = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[14]/text()')
+        houseUnitMap = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[1]/text()')
+        houseFloor = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[2]/text()')
+        totalArea = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[3]/text()')
+        houseStructure = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[4]/text()')
+        usedArea = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[5]/text()')
+        buildType = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[6]/text()')
+        orientation = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[7]/text()')
+        finishYears = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[8]/text()')
+        decoration = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[9]/text()')
+        buildStructure = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[10]/text()')
+        heatingMode = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[11]/text()')
+        ladderHouseRatio = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[12]/text()')
+        propertyRightYears = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[13]/text()')
+        #hasElevator = html.xpath('//div[@class="introContent"]/div[@class="base"]/div[@class="content"]/ul/li[14]/text()')
         
-        lianjiaNumber = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[1]/text()')
-        tradeRight = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[2]/text()')
-        listingDate = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[3]/text()')
-        houseUse = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[4]/text()')
-        houseLife = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[5]/text()')
-        houseOwnership = html.xpath('//div[@class="newwrap baseinform"]/div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[6]/text()')
+        lianjiaNumber = html.xpath('//div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[1]/span[2]/text()')
+        tradeRight = html.xpath('//div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[2]/span[2]/text()')
+        listingDate = html.xpath('//div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[3]/span[2]/text()')
+        houseUse = html.xpath('//div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[4]/span[2]/text()')
+        houseLife = html.xpath('//div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[5]/span[2]/text()')
+        houseOwnership = html.xpath('//div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[6]/span[2]/text()')
+        mortgage = html.xpath('normalize-space(//div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[7]/span[2]/text())')
+        housePhoto = html.xpath('//div[@class="introContent"]/div[@class="transaction"]/div[@class="content"]/ul/li[8]/span[2]/text()')
+
 
         #有的房源信息没有价格信息，显示暂无价格
         if len(price)==0:
@@ -76,14 +77,10 @@ def parse_xiaoqu(url,pa):
         if len(unitprice)==0:
             unitprice.append('暂无单价')
         #date[0] = date[0].replace('链家成交', '')
-        print("----------------", len(originalPrice))
-        if len(originalPrice)==0:
-        	originalPrice = [' ']
-        	tradeCycle = [' ']
-        	modifyPrice = [' ']
-        	takeLook = [' ']
-        	follow = [' ']
-        	view = [' ']
+        print("----------------", len(lianjiaNumber))
+        if len(totalPrice)==0:
+        	totalPrice = [' ']
+        	unitPrice = [' ']
         if len(houseUnitMap)==0:
         	houseUnitMap = [' ']
         	houseFloor = [' ']
@@ -98,7 +95,7 @@ def parse_xiaoqu(url,pa):
         	heatingMode = [' ']
         	ladderHouseRatio = [' ']
         	propertyRightYears = [' ']
-        	hasElevator = [' ']
+        	#hasElevator = [' ']
         if len(lianjiaNumber)==0:
         	lianjiaNumber = [' ']
         	tradeRight = [' ']
@@ -106,10 +103,12 @@ def parse_xiaoqu(url,pa):
         	houseUse = [' ']
         	houseLife = [' ']
         	houseOwnership = [' ']
-
-        print(title[0], info[0], floor[0], price[0], unitprice[0], originalPrice[0], tradeCycle[0], modifyPrice[0],takeLook[0],follow[0],view[0], houseUnitMap[0],houseFloor[0], totalArea[0], houseStructure[0], usedArea[0], buildType[0], orientation[0], finishYears[0], decoration[0],         buildStructure[0], heatingMode[0], ladderHouseRatio[0], propertyRightYears[0], hasElevator[0], lianjiaNumber[0], tradeRight[0],         listingDate[0], houseUse[0], houseLife[0], houseOwnership[0])
+        	mortgage = ['']
+        	housePhoto = ['']
         print(p_url[0])
-        a = [title[0], info[0], floor[0], price[0], unitprice[0], originalPrice[0], tradeCycle[0], modifyPrice[0],takeLook[0],follow[0],view[0], houseUnitMap[0],houseFloor[0], totalArea[0], houseStructure[0], usedArea[0], buildType[0], orientation[0], finishYears[0], decoration[0],         buildStructure[0], heatingMode[0], ladderHouseRatio[0], propertyRightYears[0], hasElevator[0], lianjiaNumber[0], tradeRight[0],         listingDate[0], houseUse[0], houseLife[0], houseOwnership[0],p_url[0]]
+        print(title[0], info[0], floor[0], price[0], unitprice[0], totalPrice[0],unitPrice[0],follow[0],view[0], houseUnitMap[0],houseFloor[0], totalArea[0], houseStructure[0], usedArea[0], buildType[0], orientation[0], finishYears[0], decoration[0],         buildStructure[0], heatingMode[0], ladderHouseRatio[0], propertyRightYears[0], lianjiaNumber[0], tradeRight[0],         listingDate[0], houseUse[0], houseLife[0], houseOwnership[0], mortgage[0],housePhoto[0])
+        
+        a = [title[0], info[0], floor[0], price[0], unitprice[0], totalPrice[0], unitPrice[0], follow[0],view[0], houseUnitMap[0],houseFloor[0], totalArea[0], houseStructure[0], usedArea[0], buildType[0], orientation[0], finishYears[0], decoration[0],         buildStructure[0], heatingMode[0], ladderHouseRatio[0], propertyRightYears[0], lianjiaNumber[0], tradeRight[0],         listingDate[0], houseUse[0], houseLife[0], houseOwnership[0],mortgage[0],housePhoto[0],p_url[0]]
         house_list.append(a)
         
         #print(p_url[0],title[0], info[0], floor[0], date[0], price[0], unitprice[0])
